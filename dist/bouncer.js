@@ -1,7 +1,7 @@
 /*!
  * bouncer v1.4.3
  * A lightweight form validation script that augments native HTML5 form validation elements and attributes.
- * (c) 2018 Chris Ferdinandi
+ * (c) 2019 Chris Ferdinandi
  * MIT License
  * http://github.com/cferdinandi/bouncer
  */
@@ -456,7 +456,7 @@
 
 		// If the message should come after the field
 		if (settings.messageAfterField) {
-			return target.nextSibling;
+      return target.nextSibling || target.parentElement.appendChild(document.createTextNode(''));
 		}
 
 		// If it should come before
